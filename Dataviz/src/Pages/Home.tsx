@@ -10,7 +10,7 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center text-center px-6 py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <h1 className="text-5xl font-bold mb-6">
           Explorez les lieux de tournages à Paris
-          <div className="flex flex-col items-center justify-center"><PiFilmSlateDuotone size={60} /></div>
+          <div className="flex flex-col items-center justify-center"><PiFilmSlateDuotone size={80} /></div>
         </h1>
         <p className="text-lg max-w-2xl mb-8">
           Découvrez les données fascinantes sur les films et séries tournés dans
