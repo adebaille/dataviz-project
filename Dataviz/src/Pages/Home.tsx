@@ -3,6 +3,7 @@ import { GoGraph } from "react-icons/go";
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { BsFillCameraReelsFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
       <section className="flex flex-col items-center justify-center text-center px-6 py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <h1 className="text-5xl font-bold mb-6">
           Explorez les lieux de tournages à Paris
-          <div className="flex flex-col items-center justify-center"><PiFilmSlateDuotone size={80} /></div>
+          <div className="p-3 flex flex-col items-center justify-center"><PiFilmSlateDuotone size={80} /></div>
         </h1>
         <p className="text-lg max-w-2xl mb-8">
           Découvrez les données fascinantes sur les films et séries tournés dans
@@ -18,13 +19,14 @@ export default function Home() {
           populaires et bien plus encore.
         </p>
         <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow hover:bg-gray-100 transition">
-          Découvrir les analyses
+          <Link to="/Analyse">Découvrir les analyses</Link>
         </button>
       </section>
-      <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-6 py-16 max-w-6xl mx-auto">
+      <h2 className="p-8 text-center text-2xl font-sans mb-2 underline">Fonctionnalités principales</h2>
+      <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-6 py-5 max-w-6xl mx-auto">
         <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
           <h3 className="text-center text-xl font-semibold mb-2">
-            <div className="flex flex-col items-center justify-center"><GoGraph size={30} /></div> Graphiques interactifs
+            <div className="p-2 flex flex-col items-center justify-center"><GoGraph size={30} /></div> Graphiques interactifs
           </h3>
           <p className="text-center text-gray-600">
             Visualisez les données avec des graphiques modernes et intuitifs
@@ -32,7 +34,7 @@ export default function Home() {
         </div>
         <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
           <h3 className="text-center text-xl font-semibold mb-2">
-            <div className="flex flex-col items-center justify-center"><CiLocationOn size={30} /></div> Analyse géographique
+            <div className="p-2 flex flex-col items-center justify-center"><CiLocationOn size={30} /></div> Analyse géographique
           </h3>
           <p className="text-center text-gray-600">
             Explorez les arrondissements les plus filmés de Paris
@@ -40,7 +42,7 @@ export default function Home() {
         </div>
         <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
           <h3 className="text-center text-xl font-semibold mb-2">
-            <div className="flex flex-col items-center justify-center"><FaRegCalendarAlt size={30} /></div> Tendances temporelles
+            <div className="p-2 flex flex-col items-center justify-center"><FaRegCalendarAlt size={30} /></div> Tendances temporelles
           </h3>
           <p className="text-center text-gray-600">
             Découvrez l'évolution des tournages au fil des années
@@ -48,7 +50,7 @@ export default function Home() {
         </div>
         <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
           <h3 className="text-center text-xl font-semibold mb-2">
-            <div className="flex flex-col items-center justify-center"><BsFillCameraReelsFill size={30} /></div> Types de production
+            <div className="p-2 flex flex-col items-center justify-center"><BsFillCameraReelsFill size={30} /></div> Types de production
           </h3>
           <p className="text-center text-gray-600">
             Comparez films, séries, téléfilms et autres productions
