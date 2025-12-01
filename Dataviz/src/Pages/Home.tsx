@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <main className="bg-gray-50 min-h-screen flex flex-col">
       <section className="flex flex-col items-center justify-center text-center px-6 py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-        <h1 className="text-5xl font-bold mb-6">
+        <h1 className="text-5xl font-bold mb-2">
           Explorez les lieux de tournages à Paris
-          <div className="p-3 flex flex-col items-center justify-center"><PiFilmSlateDuotone size={80} /></div>
+          <div className="p-8 flex flex-col items-center justify-center"><PiFilmSlateDuotone size={80} /></div>
         </h1>
         <p className="text-lg max-w-2xl mb-8">
           Découvrez les données fascinantes sur les films et séries tournés dans
@@ -22,7 +22,7 @@ export default function Home() {
           <Link to="/Analyse">Découvrir les analyses</Link>
         </button>
       </section>
-      <h2 className="p-8 text-center text-2xl font-sans mb-2 underline">Fonctionnalités principales</h2>
+      <h2 className="p-8 text-center text-2xl font-sans mb-2 underline">Fonctionnalités principales :</h2>
       <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 px-6 py-5 max-w-6xl mx-auto">
         <div className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
           <h3 className="text-center text-xl font-semibold mb-2">
