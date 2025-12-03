@@ -1,7 +1,9 @@
+import Linecharts from "../Components/Linecharts";
+
 export default function Analyse () {
     return (
         <h1>
-            page analyses
+            <Linecharts/>
         </h1>
     )
 }
