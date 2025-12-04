@@ -1,10 +1,9 @@
-import Graphic1 from "../Components/Graphic1";
-
+ import Linecharts from "../Components/Linecharts";
 
 export default function Analyse () {
     return (
-        
-        <Graphic1/>
-    
+        <h1>
+            <Linecharts/>
+        </h1>
     )
 }

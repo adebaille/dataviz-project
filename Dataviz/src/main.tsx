@@ -1,29 +1,42 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './App.css'
-import Home from './Pages/Home'
-import Analyse from './Pages/Analyse'
-import About from './Pages/About'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "./App.css";
+import Home from "./Pages/Home";
+import Analyse from "./Pages/Analyse";
+import About from "./Pages/About";
 
-
-const router = createBrowserRouter ([
+const router = createBrowserRouter([
   {
-    path : "/",
+    path: "/",
     element: <Home />,
   },
- {
-    path : "/Analyse",
+  {
+    path: "/Analyse",
     element: <Analyse />,
   },
-   {
-    path : "/About",
+  {
+    path: "/About",
     element: <About />,
   },
-])
+]);
 
-createRoot(document.getElementById('root')!).render(
+const client = new QueryClient();
+declare global {
+  interface Window {
+    __TANSTACK_QUERY_CLIENT__:
+      import("@tanstack/query-core").QueryClient;
+  }
+}
+
+// This code is for all users
+window.__TANSTACK_QUERY_CLIENT__ = client;
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
-)
+    <QueryClientProvider client={client}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </StrictMode>
+);
