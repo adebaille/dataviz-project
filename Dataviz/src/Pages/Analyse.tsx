@@ -1,7 +1,10 @@
+import Graphic1 from "../Components/Graphic1";
+
+
 export default function Analyse () {
     return (
-        <h1>
-            page analyses
-        </h1>
+        
+        <Graphic1/>
+    
     )
 }
