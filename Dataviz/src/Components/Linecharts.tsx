@@ -56,7 +56,7 @@ export default function Linecharts() {
         }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="year" />
-        <YAxis dataKey="total" width="auto" />
+        <YAxis dataKey="total" width="auto" label={{ value: 'Nombre de tournage', angle: -90, position: 'insideLeft' }}/>
         <Tooltip />
         <Legend />
         <Line
