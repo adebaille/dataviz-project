@@ -69,7 +69,7 @@ export default function Home() {
               <div className="text-gray-600">Arrondissements</div>
             </div>
             <div className="p-8 bg-white rounded-lg shadow-sm">
-              <div className="text-4xl text-blue-600 mb-2">50+</div>
+              <div className="text-4xl text-blue-600 mb-2">9</div>
               <div className="text-gray-600">Années de données</div>
             </div>
           </div>
