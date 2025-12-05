@@ -21,13 +21,14 @@ type ChartRow = {
 };
 
 export default function Areachart() {
-  // 1. Appel API avec React Query
+  // Appel API avec React Query
   const { data, isPending, error } = useQuery({
     queryKey: ["Areachart"],
     queryFn: async () => {
       const url = new URL(
         "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/lieux-de-tournage-a-paris/records"
       );
+      // Gestion des Query Params
       url.searchParams.set(
         "select",
         "year(annee_tournage),type_tournage,count(*) as nb_tournages"
@@ -42,7 +43,7 @@ export default function Areachart() {
   if (isPending) return <p>Chargement...</p>;
   if (error) return <p>Erreur : {(error as Error).message}</p>;
 
-  // 2. Transformer les données pour Recharts
+  // Typer les données en TS
   const grouped: Record<number, ChartRow> = {};
 
   for (const el of data.results as ApiResult[]) {
@@ -54,6 +55,8 @@ export default function Areachart() {
   const chartData: ChartRow[] = Object.values(grouped);
 
   return (
+
+    // Construction Graphique
     <AreaChart
       style={{
         width: "100%",
