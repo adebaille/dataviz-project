@@ -1,12 +1,4 @@
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from "recharts";
+import { ComposedChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { useQuery } from "@tanstack/react-query";
 
 export default function HorizontalBarChart() {
@@ -44,28 +36,24 @@ export default function HorizontalBarChart() {
 
 // Construction Graphique
   return (
-    <LineChart
+     <ComposedChart
       layout="vertical"
-      style={{
-        width: "100%",
-        maxWidth: "300px",
-        maxHeight: "70vh",
-        aspectRatio: 1 / 1.618,
-      }}
+      style={{ width: '100%', maxWidth: '300px', maxHeight: '70vh', aspectRatio: 1 / 1.618 }}
       responsive
       data={temp}
       margin={{
         top: 20,
         right: 0,
+        bottom: 0,
         left: 0,
-        bottom: 5,
-      }}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="total" type="number" width="auto" />
-      <YAxis dataKey="ardt" type="category" width="auto" />
+      }}
+    >
+      <CartesianGrid stroke="#f5f5f5" />
+      <XAxis width="auto" type="number" />
+      <YAxis dataKey="ardt" type="category" scale="band" width="auto" />
       <Tooltip />
       <Legend />
-      <Line dataKey="total" stroke="#8884d8" activeDot={{ r: 8 }} />
-    </LineChart>
+      <Bar dataKey="total" barSize={20} fill="#7875c9ff" />
+    </ComposedChart>
   );
 }
