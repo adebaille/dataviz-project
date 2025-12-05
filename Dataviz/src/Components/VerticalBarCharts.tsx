@@ -41,17 +41,17 @@ export default function SimpleBarchart() {
       margin={{
         top: 5,
         right: 0,
-        left: 0,
-        bottom: 5,
+        left: 30,
+        bottom: 10,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey= "type_tournage" />
-      <YAxis width={40} />
+      <YAxis width={40} fill="black" label={{ value: 'Nombre de tournages', angle: -90, position: 'insideLeft',}}/>
       <Tooltip />
       <Legend />
-      <Bar dataKey="type_tournage" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-      <Bar dataKey="total" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+      <Bar dataKey="type_tournage" name= "Répartition par type de tournage" fill="black" activeBar={<Rectangle fill="red" stroke="blue" />} />
+      <Bar dataKey="total" fill="#82ca9d" activeBar={<Rectangle fill="red" stroke="purple" />} />
     </BarChart>
     </>
   );
