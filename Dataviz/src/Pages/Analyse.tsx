@@ -1,6 +1,7 @@
-import VerticalBarCharts from "../Components/VerticalBarCharts";
+
 import Areachart from "../Components/AreaChart";
 import Linecharts from "../Components/Linecharts";
+import HorizontalBarChart from "../Components/HorizontalBarChart";
 
 export default function Analyse () {
     return (
@@ -8,8 +9,8 @@ export default function Analyse () {
             <Linecharts/>
             <br />
             <Areachart />
-            <br />
-            <VerticalBarCharts />
+
+            <HorizontalBarChart />
         </h1>
     )
 }

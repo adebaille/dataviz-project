@@ -10,12 +10,14 @@ import {
 import { useQuery } from "@tanstack/react-query";
 
 export default function Linecharts() {
+  // 1. Appel API avec React Query
   const { data, isPending, error } = useQuery({
     queryKey: ["LineCharts"],
     queryFn: async () => {
       const url = new URL(
         "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/lieux-de-tournage-a-paris/records?"
       );
+       // Gestion des Query Params
       url.searchParams.set("select", "year(annee_tournage), count(*) as total");
       url.searchParams.set("group_by", "annee_tournage");
 
@@ -36,6 +38,7 @@ export default function Linecharts() {
     });
   }
 
+  // Construction Graphique
   return (
     <>
       <LineChart
