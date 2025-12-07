@@ -32,7 +32,6 @@ export default function Analyse() {
           <h2 className="text-xl font-semibold mb-3">Tournages par arrondissement</h2>
           <HorizontalBarChart />
         </div>
-
       </div>
     </div>
   )
