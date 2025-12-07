@@ -71,7 +71,7 @@ export default function Areachart() {
         top: 20,
         right: 0,
         left: 0,
-        bottom: 0,
+        bottom: 50,
       }}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="year" />

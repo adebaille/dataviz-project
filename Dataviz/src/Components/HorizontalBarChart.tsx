@@ -57,7 +57,7 @@ export default function HorizontalBarChart() {
       margin={{
         top: 20,
         right: 0,
-        bottom: 0,
+        bottom: 10,
         left: 0,
       }}>
       <CartesianGrid stroke="#f5f5f5" />
