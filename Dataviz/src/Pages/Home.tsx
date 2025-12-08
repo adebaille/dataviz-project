@@ -4,9 +4,12 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { BsFillCameraReelsFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import Header from "../Components/Header";
 
 export default function Home() {
   return (
+    <>
+    <Header />
     <main className="bg-gray-50 min-h-screen flex flex-col">
       <section className="flex flex-col items-center justify-center text-center px-6 py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <h1 className="text-5xl font-bold mb-2">
@@ -76,5 +79,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }
