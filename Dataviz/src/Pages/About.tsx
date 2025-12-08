@@ -100,16 +100,16 @@ export default function About() {
               <div className="flex items-center gap-3 text-lg">
                 <span className="font-semibold text-gray-800">Outils :</span>
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-lg">
+                  <span className="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-lg">
                     <FaGithub className="text-gray-800 text-xl" /> GitHub
                   </span>
-                  <span className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-lg">
+                  <span className="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-lg">
                     <VscGraph className="text-purple-600 text-xl" /> Recharts
                   </span>
-                  <span className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-lg">
+                  <span className="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-lg">
                     <FaIcons className="text-purple-600 text-xl" /> React Icons
                   </span>
-                  <span className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-lg">
+                  <span className="flex items-center gap-2 bg-purple-50 px-3 py-1 rounded-lg">
                     <SiPostman className="text-orange-500 text-xl" /> Postman
                   </span>
                 </div>
