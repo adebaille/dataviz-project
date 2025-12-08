@@ -1,6 +1,9 @@
+import Header from "../Components/Header";
+
 function About () {
 return(
     <>
+    <Header />
     <h1 className= "bg-blue-600 text-white text-center text-2xl p-4">A propos</h1>
     <br />
     <div className="grid">
