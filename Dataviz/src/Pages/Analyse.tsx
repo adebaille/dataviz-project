@@ -3,9 +3,12 @@ import Linecharts from "../Components/Linecharts";
 import HorizontalBarChart from "../Components/HorizontalBarChart";
 import SimpleBarchart from "../Components/VerticalBarCharts";
 import VerticalBarChart_2 from "../Components/VerticalBarChart_2";
+import Header from "../Components/Header";
 
 export default function Analyse() {
   return (
+    <>
+    <Header />
     <div className="w-full min-h-screen bg-gray-50 p-6 space-y-15">
       <h1 className="text-3xl font-bold text-center">Analyse</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-[125rem] mx-auto">
@@ -42,5 +45,6 @@ export default function Analyse() {
 
       </div>
     </div>
+    </>
   )
 }
