@@ -2,6 +2,7 @@ import Areachart from "../Components/AreaChart";
 import Linecharts from "../Components/Linecharts";
 import HorizontalBarChart from "../Components/HorizontalBarChart";
 import SimpleBarchart from "../Components/VerticalBarCharts";
+import VerticalBarChart_2 from "../Components/VerticalBarChart_2";
 import Header from "../Components/Header";
 
 export default function Analyse() {
@@ -34,6 +35,12 @@ export default function Analyse() {
         <div className="bg-white shadow-md rounded-xl p-6 h-[37rem]">
           <h2 className="text-xl font-semibold mb-3">Tournages par arrondissement</h2>
           <HorizontalBarChart />
+        </div>
+
+        {/* Card 5 */}
+        <div className="bg-white shadow-md rounded-xl p-4 h-[37rem]">
+          <h2 className="text-xl font-semibold mb-3">Top 10 des réalisateurs (ayant tourné à Paris)</h2>
+          <VerticalBarChart_2 />
         </div>
 
       </div>
