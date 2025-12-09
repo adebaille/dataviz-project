@@ -10,7 +10,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 
 export default function Linecharts() {
-  // 1. Appel API avec React Query
+  // Appel API avec React Query
   const { data, isPending, error } = useQuery({
     queryKey: ["LineCharts"],
     queryFn: async () => {
