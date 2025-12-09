@@ -11,7 +11,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
 export default function HorizontalBarChart() {
-  // Appel API avec React Query pour paramètre du filtre
+  // Appel API avec React Query pour paramètre du filtre par type de tournage
   const [type, setType] = useState("All");
   const { data: typeTournages } = useQuery({
     queryKey: ["AllTypeTournages"],
@@ -28,9 +28,27 @@ export default function HorizontalBarChart() {
     },
   });
 
+   // Appel API avec React Query pour paramètre du filtre par année de tournage
+  const [currentYear, setCurrentYear] = useState("All");
+  const { data: year } = useQuery({
+    queryKey: ["Years"],
+    queryFn: async () => {
+      const url = new URL(
+        "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/lieux-de-tournage-a-paris/records?"
+      );
+      // Gestion des Query Params
+      url.searchParams.set("select", "year(annee_tournage) as year");
+      url.searchParams.set("group_by", "annee_tournage");
+
+      const response = await fetch(url.toString());
+      return response.json();
+    },
+  });
+  console.log(year);
+
   // Appel API avec React Query
   const { data, isPending, error } = useQuery({
-    queryKey: ["HorizontalBarChart", type],
+    queryKey: ["HorizontalBarChart", type, currentYear],
     queryFn: async () => {
       const url = new URL(
         "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/lieux-de-tournage-a-paris/records"
@@ -41,7 +59,11 @@ export default function HorizontalBarChart() {
       url.searchParams.set("where", "startswith(ardt_lieu,'75')");
 
       if (type !== "All") {
-        url.searchParams.set("where", `type_tournage="${type}"`);
+        url.searchParams.append("where", `type_tournage="${type}"`);
+      }
+
+      if (currentYear !== "All") {
+        url.searchParams.append("where", `annee_tournage=date'${currentYear}'`);
       }
 
       const response = await fetch(url.toString());
@@ -65,8 +87,9 @@ export default function HorizontalBarChart() {
   }
 
   return (
-    //filtre
+    //filtre par type tournage
     <>
+    <label htmlFor="types"> Filtre par type de tournage</label>
       <select
         name="types"
         id="types"
@@ -76,6 +99,21 @@ export default function HorizontalBarChart() {
         {typeTournages?.results?.map((item: Record<string, string>) => (
           <option key={item.type_tournage} value={item.type_tournage}>
             {item.type_tournage}
+          </option>
+        ))}
+      </select>
+
+      {/*Filtre par année de tournage*/}
+      <label htmlFor="currentYear"> Filtre par année de tournage</label>
+      <select
+        name="year"
+        id="year"
+        value={currentYear}
+        onChange={(element) => setCurrentYear(element.target.value)}>
+        <option value="All">All</option>
+        {year?.results?.map((item: Record<string, string>) => (
+          <option key={item.year} value={item.year}>
+            {item.year}
           </option>
         ))}
       </select>
