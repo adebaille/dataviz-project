@@ -1,23 +1,12 @@
 import { IoInformationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="shadow-md">
-      <div className="container bg-blue-600 m-0 px-0 py-2.5">
+    <footer className="bg-blue-600 shadow-md">
+      <div className="w-full px-4 py-2.5">
         <div className="flex items-center justify-between">
-          {/* Mentions légales */}
-          <div className="flex items-center gap-1">
-            <IoInformationSharp className="text-white text-3xl" /> 
-            <h2 className="text-white text-xs font-bold">Mentions légales :</h2>
-            <br></br>
-            <p className="text-white text-xs">
-                Site réalisé par Alisson et Nasser - Promotion Grace Hopper - ADA TECH SCHOOL - Décembre 2025
-                <br></br>
-                Liens vers Git Hub : 
-            </p>
-          </div>
-
           {/* Navigation */}
           <nav className="flex items-center gap-1">
             <Link to="/">
@@ -38,6 +27,31 @@ export default function Footer() {
               </button>
             </Link>
           </nav>
+      
+          {/* Mentions légales et crédits */}
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <IoInformationSharp className="text-white text-base" /> 
+              <h2 className="text-white text-xs font-bold">Mentions légales</h2>
+            </div>
+            <p className="text-white text-xs">
+              Site réalisé par Alison et Nasser
+              <br />
+              Promotion Grace Hopper - ADA TECH SCHOOL - Décembre 2025
+            </p>
+          </div>
+
+          {/* Liens GitHub */}
+          <div className="text-white text-xs">
+          <a href="https://github.com/adebaille" className="flex items-center gap-1 mb-1">
+              <FaGithub className="text-white text-base" /> 
+              <p className="text-white text-xs font-bold">Github Alison</p>
+            </a>
+            <a href="https://github.com/Nasserk1" className="flex items-center gap-1">
+              <FaGithub className="text-white text-base" /> 
+              <p className="text-white text-xs font-bold">Github Nasser</p>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
