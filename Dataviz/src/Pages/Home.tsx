@@ -5,6 +5,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { BsFillCameraReelsFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function Home() {
   return (
@@ -79,6 +80,7 @@ export default function Home() {
         </div>
       </section>
     </main>
+    <Footer />
     </>
   );
 }
