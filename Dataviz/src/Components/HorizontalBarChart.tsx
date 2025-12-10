@@ -137,25 +137,6 @@ export default function HorizontalBarChart() {
             ))}
           </select>
         </div>
-
-        {/* Indicateur de filtres actifs */}
-        {(type !== "All" || currentYear !== "All") && (
-          <div className="pt-2 border-t border-gray-200">
-            <span className="text-xs text-gray-500 block mb-2">Actifs :</span>
-            <div className="flex flex-col gap-1.5">
-              {type !== "All" && (
-                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-indigo-100 text-indigo-700">
-                  {type}
-                </span>
-              )}
-              {currentYear !== "All" && (
-                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-indigo-100 text-indigo-700">
-                  {currentYear}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Création graphique */}
