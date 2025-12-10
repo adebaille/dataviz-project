@@ -1,4 +1,5 @@
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import { FaGithub } from "react-icons/fa";
 import { VscGraph } from "react-icons/vsc";
 import { FaReact } from "react-icons/fa";
@@ -164,6 +165,7 @@ export default function About() {
           </section>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

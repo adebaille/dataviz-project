@@ -4,6 +4,7 @@ import HorizontalBarChart from "../Components/HorizontalBarChart";
 import SimpleBarchart from "../Components/VerticalBarCharts";
 import VerticalBarChart_2 from "../Components/VerticalBarChart_2";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function Analyse() {
   return (
@@ -45,6 +46,7 @@ export default function Analyse() {
 
       </div>
     </div>
+   <Footer /> 
     </>
   )
 }
